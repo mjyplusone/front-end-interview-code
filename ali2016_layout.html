@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        body {
+            display: flex;
+            flex-flow: column;
+            min-height: 100vh;
+            padding: 0;
+            margin: 0;
+        }
+        .header {
+            position: relative;
+            height: 70px;
+            padding: 10px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            border: 1px solid green;
+        }
+        .header .logo {
+            height: 50px;
+            width: 50px;
+            border: 1px solid red;
+        }
+        .header .username {
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+            width: 150px;
+            border: 1px solid black;
+            text-align: right;
+        }
+        .main {
+            flex: 1;
+            display: flex;
+            margin-bottom: 10px;
+        }
+        .main .content {
+            flex: 1;
+            border: 1px solid blue;
+        }
+        .main .aside-wrapper {
+            width: 200px;
+            margin-left: 30px;
+        }
+        .main .aside-wrapper .aside { 
+            border: 1px solid red;
+        }
+        .footer {
+            border: 1px solid black;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">logo</div>
+        <div class="username">用户名</div>
+    </div>
+    <div class="main">   
+        <div class="content">content - 自适应宽度</div>
+        <div class="aside-wrapper">
+            <div class="aside">aside - 定宽 200px</div>
+        </div>
+    </div>
+    <div class="footer">footer</div>
+</body>
+</html>

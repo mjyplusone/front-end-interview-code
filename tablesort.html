@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        table, th, td {
+            border: 1px solid black;
+        }
+        table {
+            border-collapse: collapse;
+        }
+        td, th{
+            width: 100px;
+            height: 30px
+        }
+        th {
+            text-align: left;
+            font-weight: normal;
+            background: #999;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>力量</th>
+                <th>敏捷</th>
+                <th>智力</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>德鲁伊</td>
+                <td>17</td>
+                <td>24</td>
+                <td>13</td>
+            </tr>
+            <tr>
+                <td>月之骑士</td>
+                <td>15</td>
+                <td>22</td>
+                <td>16</td>
+            </tr>
+            <tr>
+                <td>众神之王</td>
+                <td>19</td>
+                <td>15</td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <td>流浪剑客</td>
+                <td>23</td>
+                <td>15</td>
+                <td>14</td>
+            </tr>
+        </tbody>
+    </table>
+    <script type="text/javascript">
+        var head = document.getElementsByTagName('th');
+        var rows = document.getElementsByTagName('tr');
+        // DOM对象变为数组
+        rows = Array.prototype.slice.call(rows, 1);
+        
+        var tbody = document.getElementsByTagName('tbody')[0];
+
+        for (var i = 1; i < head.length; i++) {
+            head[i].onclick = (function(j) {
+                var flag = false;
+
+                return function() {
+                    rows.sort((row1, row2) => {
+                        var cell1 = row1.getElementsByTagName('td')[j];
+                        var cell2 = row2.getElementsByTagName('td')[j];
+                        // 低版本FF不支持innerText，textContent代替
+                        var val1 = cell1.innerText || cell1.textContent;
+                        var val2 = cell2.innerText || cell2.textContent;
+
+                        // 从大到小
+                        return val2 - val1;
+                    });
+
+                    if (flag) {
+                        // 从小到大
+                        rows.reverse();
+                    }
+                    flag = !flag;
+
+                    // rows加入表格
+                    for (var i = 0; i < rows.length; i++) {
+                        tbody.appendChild(rows[i]);
+                    }
+                }
+            })(i);
+        }
+    </script>
+</body>
+</html>
