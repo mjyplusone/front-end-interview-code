@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        .countdown {
+            position: relative;
+            display: flex;
+            width: 200px;
+            height: 40px;
+            background: grey;
+            border-radius: 3px;
+        }
+        .countdown .time {
+            flex: 1;
+            font-size: 25px;
+            line-height: 40px;
+            text-align: center;
+            color: #ffffff;
+            overflow: hidden;
+        }
+        .second {
+            animation: moveonsec 1s linear infinite;
+        }
+        .minute {
+            animation: moveonmin 60s linear infinite;
+        }
+        .hour {
+            animation: moveonhour 3600s linear infinite;
+        }
+        .day {
+            animation: moveonday 86400s linear infinite;
+        }
+        .countdown .colon {
+            font-size: 30px;
+            line-height: 35px;
+            color: #ffffff;
+        }
+
+        @keyframes moveonsec {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-100%);
+            }
+            100% {
+                transform: translateY(-100%);
+            }
+        }
+        @keyframes moveonmin {
+            0% {
+                transform: translateY(0);
+            }
+            0.83333333% {
+                transform: translateY(-100%);
+            }
+            100% {
+                transform: translateY(-100%);
+            }
+        }
+        /* hour和day懒得算了 */
+        @keyframes moveonhour {
+        }
+        @keyframes moveonday {
+        }
+    </style>
+</head>
+<body>
+    <div class="countdown">
+        <div class="time">
+            <div class="day"></div>
+            <div class="day"></div>
+        </div>
+        <div class="colon">:</div>
+        <div class="time">
+            <div class="hour"></div>
+            <div class="hour"></div>
+        </div>
+        <div class="colon">:</div>
+        <div class="time">
+            <div class="minute"></div>
+            <div class="minute"></div>
+        </div>
+        <div class="colon">:</div>
+        <div class="time">
+            <div class="second"></div>
+            <div class="second"></div>
+        </div>
+    </div>
+
+    <script>
+        // 方法1:写的太麻烦了
+        // var setDay = 0;
+        // var setHour = 0;
+        // var setMinute = 1;
+        // var setSecond = 11;
+
+        // document.getElementById('day').innerHTML = padLeftZero(setDay);
+        // document.getElementById('hour').innerHTML = padLeftZero(setHour);
+        // document.getElementById('minute').innerHTML = padLeftZero(setMinute);
+        // document.getElementById('second').innerHTML = padLeftZero(setSecond);
+
+        // var timer = setInterval(() => {
+        //     if (setSecond > 0)  setSecond--;
+        //     else {
+        //         if (setMinute > 0) {
+        //             setSecond = 59;
+        //             setMinute--;
+        //         }
+        //         else {
+        //             if (setHour > 0) {
+        //                 setMinute = 59;
+        //                 setHour--;
+        //             }
+        //             else {
+        //                 if (setDay > 0) {
+        //                     setHour = 23;
+        //                     setDay--;
+        //                 }
+        //                 else {
+        //                     clearInterval(timer);
+        //                 }
+        //             }
+        //         }
+        //     }
+        //     document.getElementById('day').innerHTML = padLeftZero(setDay);
+        //     document.getElementById('hour').innerHTML = padLeftZero(setHour);
+        //     document.getElementById('minute').innerHTML = padLeftZero(setMinute);
+        //     document.getElementById('second').innerHTML = padLeftZero(setSecond);
+        // }, 1000);
+
+
+        // 方法2
+        var setAll = 1990;
+        document.getElementsByClassName('day')[0].innerHTML = padLeftZero(parseInt(setAll/60/60/24));
+        document.getElementsByClassName('hour')[0].innerHTML = padLeftZero(parseInt(setAll/60/60));
+        document.getElementsByClassName('minute')[0].innerHTML = padLeftZero(parseInt(setAll/60));
+        document.getElementsByClassName('second')[0].innerHTML = padLeftZero(setAll%60);
+
+        // 设置不同位延迟
+        document.getElementsByClassName('minute')[0].style.animationDelay = setAll%60 + 1 + 's';
+        document.getElementsByClassName('minute')[1].style.animationDelay = setAll%60 + 1 + 's';
+        document.getElementsByClassName('hour')[0].style.animationDelay = setAll/60 + 1 + 's';
+        document.getElementsByClassName('hour')[1].style.animationDelay = setAll/60 + 1 + 's';
+        document.getElementsByClassName('day')[0].style.animationDelay = setAll/60/60 + 1 + 's';
+        document.getElementsByClassName('day')[1].style.animationDelay = setAll/60/60 + 1 + 's';
+
+        var timer = setInterval(() => {
+            if (setAll > 0) {
+                document.getElementsByClassName('day')[0].innerHTML = padLeftZero(parseInt(setAll/60/60/24));
+                document.getElementsByClassName('hour')[0].innerHTML = padLeftZero(parseInt(setAll/60/60));
+                document.getElementsByClassName('minute')[0].innerHTML = padLeftZero(parseInt(setAll/60));
+                document.getElementsByClassName('second')[0].innerHTML = padLeftZero(setAll%60);
+                setAll--;
+                document.getElementsByClassName('day')[1].innerHTML = padLeftZero(parseInt(setAll/60/60/24));
+                document.getElementsByClassName('hour')[1].innerHTML = padLeftZero(parseInt(setAll/60/60));
+                document.getElementsByClassName('minute')[1].innerHTML = padLeftZero(parseInt(setAll/60));
+                document.getElementsByClassName('second')[1].innerHTML = padLeftZero(setAll%60);
+            } else {
+                clearInterval(timer);
+            }
+        }, 1000);
+     
+
+        function padLeftZero (num) {
+            var str = num + '';
+            return ('00' + str).substr(str.length);
+        }
+    </script>
+</body>
+</html>
