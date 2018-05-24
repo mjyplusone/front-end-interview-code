@@ -29,6 +29,19 @@
 - [字符串转为驼峰格式](https://github.com/mjyplusone/front-end-interview-code/blob/master/cssStyle2DomStyle.js)
 - [字符串字符统计](https://github.com/mjyplusone/front-end-interview-code/blob/master/countletter.js)
 
+#### 剑指offer
+- [二维数组中的查找](https://github.com/mjyplusone/front-end-interview-code/blob/master/jzoffer01.js)
+- [替换空格](https://github.com/mjyplusone/front-end-interview-code/blob/master/jzoffer02.js)
+- [从尾到头打印链表](https://github.com/mjyplusone/front-end-interview-code/blob/master/jzoffer03.js)
+- [重建二叉树](https://github.com/mjyplusone/front-end-interview-code/blob/master/jzoffer04.js)
+- [用两个栈实现队列](https://github.com/mjyplusone/front-end-interview-code/blob/master/jzoffer05.js)
+- [旋转数组的最小数字](https://github.com/mjyplusone/front-end-interview-code/blob/master/jzoffer06.js)
+- [斐波那契数列](https://github.com/mjyplusone/front-end-interview-code/blob/master/jzoffer07.js)
+- [跳台阶](https://github.com/mjyplusone/front-end-interview-code/blob/master/jzoffer08.js)
+- [变态跳台阶](https://github.com/mjyplusone/front-end-interview-code/blob/master/jzoffer09.js)
+- [矩形覆盖](https://github.com/mjyplusone/front-end-interview-code/blob/master/jzoffer10.js)
+- [二进制中1的个数](https://github.com/mjyplusone/front-end-interview-code/blob/master/jzoffer11.js)（无符号右移与负数的补码表示）
+
 #### 百度2015前端研发
 - [css伪元素：三角](https://github.com/mjyplusone/front-end-interview-code/blob/master/triangle.html)
 
