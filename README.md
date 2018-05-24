@@ -1,5 +1,7 @@
 # front-end-interview-code
 
+找工作前刷刷题~~~
+
 #### 牛客网JS能力测评经典题
 - [二进制转十进制](https://github.com/mjyplusone/front-end-interview-code/blob/master/base10.js)
 - [批量改变对象的属性](https://github.com/mjyplusone/front-end-interview-code/blob/master/alterObjects.js)
@@ -31,4 +33,15 @@
 - [css伪元素：三角](https://github.com/mjyplusone/front-end-interview-code/blob/master/triangle.html)
 
 #### 腾讯2015春招web前端开发
-- [](https://github.com/mjyplusone/front-end-interview-code/blob/master/)
+- [数组去重](https://github.com/mjyplusone/front-end-interview-code/blob/master/arryuniq.js)
+- [sort排序](https://github.com/mjyplusone/front-end-interview-code/blob/master/mysort.js)
+
+#### 阿里巴巴2016前端开发工程师笔试(一) 
+- [布局](https://github.com/mjyplusone/front-end-interview-code/blob/master/ali2016_layout.html)
+- [fibonacci数列（非递归）](https://github.com/mjyplusone/front-end-interview-code/blob/master/getNthFibonacci.js)
+
+#### 美丽联合2018校招
+- [倒计时组件](https://github.com/mjyplusone/front-end-interview-code/blob/master/countDown.html)（有卡顿）
+
+#### 不知道哪里的了
+- [表格排序](https://github.com/mjyplusone/front-end-interview-code/blob/master/tablesort.html)
