@@ -41,6 +41,17 @@
 - [变态跳台阶](https://github.com/mjyplusone/front-end-interview-code/blob/master/jzoffer09.js)
 - [矩形覆盖](https://github.com/mjyplusone/front-end-interview-code/blob/master/jzoffer10.js)
 - [二进制中1的个数](https://github.com/mjyplusone/front-end-interview-code/blob/master/jzoffer11.js)（无符号右移与负数的补码表示）
+- [数值的整数次方](https://github.com/mjyplusone/front-end-interview-code/blob/master/jzoffer12.js)
+- [调整数组顺序使奇数位于偶数前面](https://github.com/mjyplusone/front-end-interview-code/blob/master/jzoffer13.js)
+- [链表中倒数第k个节点](https://github.com/mjyplusone/front-end-interview-code/blob/master/jzoffer14.js)
+- [反转链表](https://github.com/mjyplusone/front-end-interview-code/blob/master/jzoffer15.js)
+- [合并两个排序的链表](https://github.com/mjyplusone/front-end-interview-code/blob/master/jzoffer16.js)
+- [树的子结构](https://github.com/mjyplusone/front-end-interview-code/blob/master/jzoffer17.js)
+- [二叉树的镜像](https://github.com/mjyplusone/front-end-interview-code/blob/master/jzoffer18.js)
+- [顺时针打印矩阵](https://github.com/mjyplusone/front-end-interview-code/blob/master/jzoffer19.js)
+- [包含min函数的栈](https://github.com/mjyplusone/front-end-interview-code/blob/master/jzoffer20.js)
+- [栈的压入弹出序列](https://github.com/mjyplusone/front-end-interview-code/blob/master/jzoffer21.js)
+- [从上往下打印二叉树](https://github.com/mjyplusone/front-end-interview-code/blob/master/jzoffer22.js)
 
 #### 百度2015前端研发
 - [css伪元素：三角](https://github.com/mjyplusone/front-end-interview-code/blob/master/triangle.html)
