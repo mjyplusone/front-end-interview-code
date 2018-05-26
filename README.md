@@ -52,6 +52,18 @@
 - [包含min函数的栈](https://github.com/mjyplusone/front-end-interview-code/blob/master/jzoffer20.js)
 - [栈的压入弹出序列](https://github.com/mjyplusone/front-end-interview-code/blob/master/jzoffer21.js)
 - [从上往下打印二叉树](https://github.com/mjyplusone/front-end-interview-code/blob/master/jzoffer22.js)
+- [二叉搜索树的后序遍历序列](https://github.com/mjyplusone/front-end-interview-code/blob/master/jzoffer23.js)
+- [二叉树中和为某一值的路径](https://github.com/mjyplusone/front-end-interview-code/blob/master/jzoffer24.js)
+- [复杂链表的复制](https://github.com/mjyplusone/front-end-interview-code/blob/master/jzoffer25.js)
+- [二叉搜索树与双向链表](https://github.com/mjyplusone/front-end-interview-code/blob/master/jzoffer26.js)
+- [字符串的排列](https://github.com/mjyplusone/front-end-interview-code/blob/master/jzoffer27.js)
+- [数组中出现次数超过一半的数字](https://github.com/mjyplusone/front-end-interview-code/blob/master/jzoffer28.js)
+- [最小的k个数](https://github.com/mjyplusone/front-end-interview-code/blob/master/jzoffer29.js)
+- [连续子数组的最大和](https://github.com/mjyplusone/front-end-interview-code/blob/master/jzoffer30.js)
+- [整数中1出现的次数](https://github.com/mjyplusone/front-end-interview-code/blob/master/jzoffer31.js)
+- [把数组排成最小的数](https://github.com/mjyplusone/front-end-interview-code/blob/master/jzoffer32.js)
+- [丑数](https://github.com/mjyplusone/front-end-interview-code/blob/master/jzoffer33.js)
+- [第一个只出现一次的字符位置](https://github.com/mjyplusone/front-end-interview-code/blob/master/jzoffer34.js)
 
 #### 百度2015前端研发
 - [css伪元素：三角](https://github.com/mjyplusone/front-end-interview-code/blob/master/triangle.html)
