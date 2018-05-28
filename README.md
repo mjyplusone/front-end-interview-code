@@ -64,6 +64,17 @@
 - [把数组排成最小的数](https://github.com/mjyplusone/front-end-interview-code/blob/master/jzoffer32.js)
 - [丑数](https://github.com/mjyplusone/front-end-interview-code/blob/master/jzoffer33.js)
 - [第一个只出现一次的字符位置](https://github.com/mjyplusone/front-end-interview-code/blob/master/jzoffer34.js)
+- [数组中的逆序对](https://github.com/mjyplusone/front-end-interview-code/blob/master/jzoffer35.js)
+- [两个链表的第一个公共节点](https://github.com/mjyplusone/front-end-interview-code/blob/master/jzoffer36.js)
+- [数字在排序数组中出现的次数](https://github.com/mjyplusone/front-end-interview-code/blob/master/jzoffer37.js)
+- [二叉树的深度](https://github.com/mjyplusone/front-end-interview-code/blob/master/jzoffer38.js)
+- [平衡二叉树](https://github.com/mjyplusone/front-end-interview-code/blob/master/jzoffer39.js)
+- [数组中只出现一次的数字](https://github.com/mjyplusone/front-end-interview-code/blob/master/jzoffer40.js)
+- [和为S的连续正数序列](https://github.com/mjyplusone/front-end-interview-code/blob/master/jzoffer41.js)
+- [和为S的两个数字](https://github.com/mjyplusone/front-end-interview-code/blob/master/jzoffer42.js)
+- [左旋转字符串](https://github.com/mjyplusone/front-end-interview-code/blob/master/jzoffer43.js)
+- [翻转单词序列](https://github.com/mjyplusone/front-end-interview-code/blob/master/jzoffer44.js)
+- [扑克牌顺子](https://github.com/mjyplusone/front-end-interview-code/blob/master/jzoffer45.js)
 
 #### 百度2015前端研发
 - [css伪元素：三角](https://github.com/mjyplusone/front-end-interview-code/blob/master/triangle.html)
