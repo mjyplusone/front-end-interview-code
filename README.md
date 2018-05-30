@@ -75,6 +75,18 @@
 - [左旋转字符串](https://github.com/mjyplusone/front-end-interview-code/blob/master/jzoffer43.js)
 - [翻转单词序列](https://github.com/mjyplusone/front-end-interview-code/blob/master/jzoffer44.js)
 - [扑克牌顺子](https://github.com/mjyplusone/front-end-interview-code/blob/master/jzoffer45.js)
+- [孩子们的游戏（圆圈中最后剩下的数）](https://github.com/mjyplusone/front-end-interview-code/blob/master/jzoffer46.js)
+- [求1+2+3+...+n](https://github.com/mjyplusone/front-end-interview-code/blob/master/jzoffer47.js)
+- [不用加减乘除做加法](https://github.com/mjyplusone/front-end-interview-code/blob/master/jzoffer48.js)
+- [把字符串转换成整数](https://github.com/mjyplusone/front-end-interview-code/blob/master/jzoffer49.js)
+- [数组中重复的数字](https://github.com/mjyplusone/front-end-interview-code/blob/master/jzoffer50.js)
+- [构建乘积数组](https://github.com/mjyplusone/front-end-interview-code/blob/master/jzoffer51.js)
+- [正则表达式匹配](https://github.com/mjyplusone/front-end-interview-code/blob/master/jzoffer52.js)
+- [表示数值的字符串](https://github.com/mjyplusone/front-end-interview-code/blob/master/jzoffer53.js)
+- [字符流中第一个不重复的字符](https://github.com/mjyplusone/front-end-interview-code/blob/master/jzoffer54.js)
+- [链表中环的入口节点](https://github.com/mjyplusone/front-end-interview-code/blob/master/jzoffer55.js)
+- [删除链表中的重复节点](https://github.com/mjyplusone/front-end-interview-code/blob/master/jzoffer56.js)
+- [二叉树的下一个节点](https://github.com/mjyplusone/front-end-interview-code/blob/master/jzoffer57.js)
 
 #### 百度2015前端研发
 - [css伪元素：三角](https://github.com/mjyplusone/front-end-interview-code/blob/master/triangle.html)
