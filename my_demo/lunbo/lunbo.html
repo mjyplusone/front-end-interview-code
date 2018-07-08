@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .wrapper {
+            position: relative;
+            width: 500px;
+            height: 300px;
+            margin: 50px auto;
+            overflow: hidden;
+        }
+        ul.picture {
+            position: absolute;
+            width: 2500px;
+            height: 300px;
+            background: rebeccapurple;
+            font-size: 0;
+            animation: slide 10s infinite;
+            /* transition: left 0.5s; */
+        }
+        ul.picture:hover {
+            animation-play-state: paused
+        }
+        ul.picture li {
+            display: inline-block;
+            width: 500px;
+            height: 300px;
+            background-size: cover;
+        }
+        .pic1 {
+            background-image: url('desktop1.jpg');
+        }
+        .pic2 {
+            background-image: url('desktop2.jpg');
+        }
+        .pic3 {
+            background-image: url('desktop3.jpg');
+        }
+        .pic4 {
+            background-image: url('desktop4.jpg');
+        }
+        ul.dots {
+            position: absolute;
+            bottom: 10px;
+            right: 20px;
+        }
+        ul.dots li {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-left: 10px;
+            background: rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+        }
+        @keyframes slide {
+            0% {
+                transform: translate(0);
+            }
+            20% {
+                transform: translate(0);
+            }
+            25% {
+                transform: translate(-500px);
+            }
+            45% {
+                transform: translate(-500px);
+            }
+            50% {
+                transform: translate(-1000px);
+            }
+            70% {
+                transform: translate(-1000px);
+            }
+            75% {
+                transform: translate(-1500px);
+            }
+            95% {
+                transform: translate(-1500px);
+            }
+            100% {
+                transform: translate(-2000px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <ul class="picture">
+            <li class="pic1"></li>
+            <li class="pic2"></li>
+            <li class="pic3"></li>
+            <li class="pic4"></li>
+            <!-- 增加一个初始图用于无缝连接 -->
+            <li class="pic1"></li>  
+        </ul>
+        <ul class="dots">
+            <li class="dot"></li>
+            <li class="dot"></li>
+            <li class="dot"></li>
+            <li class="dot"></li>
+        </ul>
+    </div>
+
+    <script type="text/javascript">
+        var dot = document.getElementsByClassName('dot');
+        var picture = document.getElementsByClassName('picture')[0];
+        for (var i = 0; i < dot.length; i++) {
+            dot[i].onclick = (function(j) {
+                return function() {
+                    console.log(j);
+                    picture.style.left = '-' + j * 500 + 'px';
+                };
+            })(i);
+        }
+    </script>
+</body>
+</html>

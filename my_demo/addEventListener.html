@@ -1,0 +1,35 @@
+<!-- 使用addEventListener点击li弹出内容，并且动态添加li之后有效 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>元素1</li>
+        <li>元素2</li>
+        <li>元素3</li>
+    </ul>
+    <input type="button" value="添加元素" id="btn">
+    <script type="text/javascript">
+        var parent = document.getElementsByTagName('ul')[0];
+
+        // 动态添加元素
+        var count = 3;
+        document.getElementById('btn').onclick = function() {
+            var newli = document.createElement('li');
+            newli.innerHTML = '元素' + (++count);
+            parent.appendChild(newli);
+        }
+
+        // 给动态添加的元素绑定事件(事件委托)
+        parent.addEventListener('click', function(event) {
+            var target = event.target || event.srcElement;
+            console.log(target.innerHTML);
+        });
+    </script>
+</body>
+</html>

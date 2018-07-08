@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jsonp</title>
+</head>
+<body>
+    <input type="button" value="jsonp跨域" id="btn">
+    <input type="button" value="图像Ping跨域" id="btn2">
+    <input type="button" value="直接Ajax请求" id="btn3">
+    <script>
+        function test(data){
+            alert(data.name);
+        };
+
+        document.getElementById('btn').onclick = function() {
+            var script = document.createElement('script');
+            script.src = 'http://localhost:3000/jsonp?callback=test';
+            document.body.insertBefore(script, document.body.firstChild);
+        }
+        
+        document.getElementById('btn2').onclick = function() {
+            var img = new Image();
+            img.onload = img.onerror = function() {
+                alert('Done');
+            }
+            img.src = 'http://localhost:3000/';
+        }
+
+        document.getElementById('btn3').onclick = function() {
+            xhr = new XMLHttpRequest();
+
+            // 异步请求接收响应
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState == 4) {
+                    if ((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304) {
+                        alert(xhr.responseText);
+                    } else {
+                        alert("Request was unsuccessful: " + xhr.status);
+                    }
+                }
+            }
+
+            xhr.open('get', 'http://localhost:3000/', false);
+            xhr.setRequestHeader("MyHeader", "MyValue");
+            xhr.send(null);
+        }
+    </script>
+</body>
+</html>

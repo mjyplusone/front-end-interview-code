@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>懒加载</title>
+    <style type="text/css">
+        .placeholder {
+            height: 400px;
+        }
+        img {
+            width: 500px
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="placeholder">我只是占个位置</div>
+        <img src="" alt="" data-src="1.jpg">
+        <div class="placeholder">我只是占个位置</div>
+        <img src="" alt="" data-src="2.jpg">
+        <div class="placeholder">我只是占个位置</div>
+        <img src="" alt="" data-src="3.jpg">
+        <div class="placeholder">我只是占个位置</div>
+        <img src="" alt="" data-src="4.jpg">
+    </div>
+
+<script type="text/javascript">
+    window.addEventListener('DOMContentLoaded', lazyLoadImage);
+    window.addEventListener('load', lazyLoadImage);
+    window.addEventListener('resize', lazyLoadImage);
+    window.addEventListener('scroll', lazyLoadImage);
+    
+    function lazyLoadImage() {
+        var images = document.querySelectorAll('img[data-src]');
+        Array.prototype.forEach.call(images, (image) => {
+            // 图片进入可视窗口
+            if (elementInViewport(image)) {
+                image.setAttribute('src', image.getAttribute('data-src'));
+                image.removeAttribute('data-src');
+            }
+        });
+    }
+
+    function elementInViewport(el) {
+        // 获取DOMRect对象边框相对于浏览器的位置
+        var rect = el.getBoundingClientRect();
+
+        return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
+    }
+</script>
+</body>
+</html>

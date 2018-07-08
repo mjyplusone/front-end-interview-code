@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>自适应正方形</title>
+    <style type="text/css">
+        /* .square {
+            width: 30%;
+            height: 30vw;
+            background: red;
+        } */
+
+        /* .square {
+            width: 30%;
+            height: 0;
+            padding-bottom: 30%;
+            background: red;
+        } */
+
+        .square{    
+            width:30%;    
+            background:red;  
+            overflow:hidden;     /* 触发BFC */  
+            /* border: 1px solid black; */
+        }    
+        .square:after{    
+            content: '';    
+            display: block;    
+            margin-top:100%;    
+        }   
+    </style>
+</head>
+<body>
+    <div class="square">
+    </div>
+</body>
+</html>

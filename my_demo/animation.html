@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>setTimeout/setInterval/requestAnimationFrame</title>
+    <style type="text/css">
+        #progress {
+            width: 0;
+            height: 20px;
+            line-height: 20px;
+            background-color: lightblue;
+        }
+    </style>
+</head>
+<body>
+    <div id="progress">0%</div>
+    <button id="btn">run</button>
+    <script type="text/javascript">
+        var btn = document.getElementById('btn');
+        var progress = document.getElementById('progress');
+        var timer;
+        // setInterval
+        // btn.onclick = function() {
+        //     clearInterval(timer);
+        //     progress.style.width = '0';
+        //     timer = setInterval(function() {
+        //         if (parseInt(progress.style.width) < 500) {
+        //             progress.style.width = parseInt(progress.style.width) + 5 + 'px';
+        //             progress.innerHTML = parseInt(progress.style.width) / 5 + '%';
+        //         } else {
+        //             clearInterval(timer);
+        //         }
+        //     }, 16);
+        // }
+
+        // setTimeout
+        // btn.onclick = function() {
+        //     clearTimeout(timer);
+        //     progress.style.width = '0';
+        //     timer = setTimeout(function fn() {
+        //         if (parseInt(progress.style.width) < 500) {
+        //             progress.style.width = parseInt(progress.style.width) + 5 + 'px';
+        //             progress.innerHTML = parseInt(progress.style.width) / 5 + '%';
+        //             timer = setTimeout(fn, 16);
+        //         } else {
+        //             clearTimeout(timer);
+        //         }
+        //     }, 16);
+        // }
+
+        // requestAnimationFrame
+        btn.onclick = function() {
+            cancelAnimationFrame(timer);
+            progress.style.width = '0';
+            timer = requestAnimationFrame(function fn() {
+                if (parseInt(progress.style.width) < 500) {
+                    progress.style.width = parseInt(progress.style.width) + 5 + 'px';
+                    progress.innerHTML = parseInt(progress.style.width) / 5 + '%';
+                    timer = requestAnimationFrame(fn);
+                } else {
+                    cancelAnimationFrame(timer);
+                }
+            });
+        }
+
+    </script>
+</body>
+</html>

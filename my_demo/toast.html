@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .toast{
+            width:300px;
+            height:100px;
+            line-height:100px;
+            text-align: center;
+            position: fixed;
+            left:50%;
+            top:100%;
+            margin:-50px 0 0 -150px;
+            background-color:rgba(0,0,0,0.5);
+            color:#FFF;
+            /* opacity: 0; */
+            animation: up 2s infinite;
+        }
+        .anim{
+            opacity: 1;
+            top: 100%;
+        }
+        .anim-end{
+            opacity: 0;
+            top: 50%;
+        }
+        @keyframes up {
+            0% {
+                opacity: 1;
+                top: 100%;
+            }
+            100% {
+                opacity: 0;
+                top: 50%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 用HTML、CSS、Javascript编写一个Toast 组件，要求：从底部渐变上移到屏幕正中间，2秒后消失。 -->
+    <!-- 要点：居中、动画、延迟 -->
+    <div class="toast"></div>
+    <script>
+        // var showToast = function(text){
+        //     var dom = document.querySelector('.toast');
+        //     dom.innerHTML = text;
+        //     dom.classList.add('anim')
+        //     setTimeout(function(){
+        //         dom.classList.add('anim-end')
+        //     },2000)
+        // };
+
+        // showToast();
+    </script>
+</body>
+</html>

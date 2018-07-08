@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        .lunbo {
+            width: 500px;
+            height: 300px;
+            margin: 50px auto;
+            overflow: hidden;
+            background-size: cover;
+            animation: loop 10s infinite;
+        }
+        @keyframes loop {
+            0% {
+                background-image: url('desktop1.jpg');
+            }
+            25% {
+                background-image: url('desktop2.jpg');
+            }
+            50% {
+                background-image: url('desktop3.jpg');
+            }
+            75% {
+                background-image: url('desktop4.jpg');
+            }
+            100% {
+                background-image: url('desktop1.jpg');
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="lunbo"></div>
+</body>
+</html>

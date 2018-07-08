@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .hide{
+            display: none!important;
+        }
+        .pagination{
+            margin: 0 auto;
+            padding: 0;
+            list-style: none;
+            text-align: center;
+        }
+        .pagination li{
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            overflow: hidden;
+            line-height: 30px;
+            margin: 0 5px 0 0;
+            font-size: 14px;
+            text-align: center;
+            border: 1px solid #00bc9b;
+            color: #00bc9b;
+            cursor: pointer;
+        }
+        .pagination li.current,
+        .pagination li:hover{
+            background: #00bc9b;
+            color: #ffffff;
+        }
+        .demo {
+            margin: 10px 0;
+            padding: 10px;
+            background: #eeeeee;
+            text-align: center;
+        }
+    </style>
+
+
+<!-- 分页组件是web开发中常见的组件，请完成pagination函数，在id为jsPagination的DOM元素中完成分页的显示部分，需求如下
+1、最多连续显示5页，居中高亮显示current页（如demo1所示)
+2、total为0时，隐藏整个元素（如demo2所示）
+3、如果total<=5，则显示全部页数，隐藏“首页”和“末页”元素（如demo3所示）
+4、当current居中不足5页，向后(前)补足5页，隐藏“首页”(“末页”)元素(如demo4和demo5所示)
+5、total、current均为正整数，1 <= current <= total  -->
+</head>
+<body>
+    <ul class="pagination" id="jsPagination">
+        <li>首页</li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li>末页</li>
+    </ul>
+
+    <script>
+        function pagination(total, current) {
+            pagination = document.getElementById('jsPagination');
+            li = document.getElementsByTagName('li');
+
+            // 首页末页的值
+            var front, behind;
+            
+            // total为0，隐藏整个元素
+            if (total === 0) {
+                pagination.classList.add('hide');
+            } else if (total <= 5) {
+                front = 1;
+                behind = total;
+                for (var i = front, j = 1; i <= behind; i++, j++) {
+                    li[j].innerHTML = i + '';
+                }
+                // 多余li hidden
+                for (var i = total + 1; i <=5; i++) {
+                    li[i].classList.add('hide');
+                }
+            } else {
+                front = current - 2 < 1 ? 1 : current - 2;
+                behind = current + 2 > total ? total : current + 2;
+                if (behind - front < 4) {
+                    if (front === 1) {
+                        behind = front + 4;
+                    }
+                    if (behind === total) {
+                        front = behind - 4;
+                    }
+                }
+                for (var i = front, j = 1; i <= behind; i++, j++) {
+                    li[j].innerHTML = i + '';
+                }
+            }
+            
+            // 首页末页是否显示
+            firstli = li[0];
+            lastli = li[li.length - 1];
+            if (front === 1) firstli.classList.add('hide');
+            if (behind === total) lastli.classList.add('hide');
+
+
+            // 当前高亮
+            for (var i = 1; i <= behind - front + 1; i++) {
+                if (parseInt(li[i].innerHTML) === current) {
+                    li[i].classList.add('current');
+                }
+            }
+        }
+
+        pagination(17, 5);
+    </script>
+</body>
+</html>

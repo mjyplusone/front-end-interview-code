@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        a {
+            color: #00bc9b;
+        }
+    </style>
+</head>
+<body>
+    <!-- 页面中存在id=jsContainer的DOM元素。
+    该DOM元素内会给出一段随机文本，可能包含一些链接，比如https://www.baidu.com，或者 www.baidu.com?from=onlineExam，如果出现链接文本，请给该链接文本加上链接标签，用户点击后能直接在新窗口中打开该链接。
+    请完成 link 函数，完成该功能
+    1、container只有纯文本内容，不包含其他dom元素
+    2、识别所有以http://、https://或者www.开始的链接
+    3、所有www.开头的链接，默认使用 http 协议
+    4、所有链接在新窗口打开  -->
+    <div id="jsContainer">
+        这里会给出一段随机文本，可能包含一些链接，比如https://www.baidu.com，或者 www.baidu.com?from=onlineExam，如果出现链接文本，请给该链接文本加上链接标签，用户点击后能直接在新窗口中打开该链接。
+    </div>
+
+    <script>
+        function link() {
+            container = document.getElementById('jsContainer');
+            content = container.innerText;
+
+            var reg = /(http:\/\/|https:\/\/)*www\.\w+\.(com|cn|com.cn|edu|hk|net)(\?\w+=\w+(\&\w+=\w+)*)?/g;
+
+            var content = content.replace(reg, function(item, index) {
+                var url;
+                if (item.indexOf('http://') === -1 && item.indexOf('https://')) {
+                    url = 'http://' + item;
+                } else {
+                    url = item;
+                }
+                var result = '<a target="_blank" href="' + url + '">' + item + '</a>';
+                return result;
+            });
+            container.innerHTML = content;
+        }
+
+        link();
+    </script>
+</body>
+</html>

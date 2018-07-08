@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>正则表达式匹配手机号和邮箱</title>
+</head>
+<body>
+    手机号：<input type="text" id="phone">
+    <input type="button" value="提交" id="btn1"><br />
+    邮箱：<input type="text" id="mail">
+    <input type="button" value="提交" id="btn2"> 
+    <script>
+        var phone = document.getElementById('phone');
+        var mail = document.getElementById('mail');
+        var btn1 = document.getElementById('btn1');
+        var btn2 = document.getElementById('btn2');
+
+        // 验证手机号
+        btn1.onclick = function() {
+            var value = phone.value;
+            var reg = /^1[3456789]\d{9}$/;
+            if (reg.test(value)) {
+                alert('Yes');
+            } else {
+                alert('No');
+            }
+        }
+
+        // 验证邮箱
+        btn2.onclick = function() {
+            var value = mail.value;
+            var reg = /^\w+@\w+\.(com|com.cn|edu|hk|cn|net)$/;
+            if (reg.test(value)) {
+                alert('Yes');
+            } else {
+                alert('No');
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>div模拟textarea文本域实现高度自适应</div></title>
+    <style type="text/css">
+        .textarea {
+            width: 400px;
+            min-height: 100px;
+            max-height: 200px;
+            overflow: auto;
+            border: 1px solid #a0b3d6; 
+            font-size: 12px; 
+            outline: none;  /*去除边框的蓝色*/
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="textarea" contenteditable="true"></div>
+</body>
+</html>

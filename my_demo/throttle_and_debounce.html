@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>防抖与节流</title>
+    <style>
+        .demo {
+            width: 200px;
+            height: 200px;
+            border: 1px solid red;
+            overflow-y: scroll;
+            margin-bottom: 50px;
+        }
+        .scroll {
+            height: 1000px;
+        }
+    </style>
+</head>
+<body>
+    <div id="normal" class="demo">
+        normal
+        <div class="scroll"></div>
+    </div>
+    <div id="debounce" class="demo">
+        防抖debounce
+        <div class="scroll"></div>
+    </div>
+    <div id="throttle" class="demo">
+        节流throttle
+        <div class="scroll"></div>
+    </div>
+
+<script type="text/javascript">
+    // normal
+    document.getElementById('normal').onscroll = function() {
+        console.log('normal scroll');
+    }
+
+    // 防抖debounce
+    var timer1;
+    document.getElementById('debounce').onscroll = function() {
+        if (timer1) {
+            clearTimeout(timer1);
+        }
+        timer1 = setTimeout(() => {
+            console.log('debounce scroll');
+        }, 300);
+    }
+
+    // 节流throttle
+    var begin = new Date();
+    document.getElementById('throttle').onscroll = function() {
+        var current = new Date();
+        if (current - begin >= 300) {
+            console.log('throttle scroll');
+            begin = current;
+        }
+    }
+
+</script>
+</body>
+</html>
+
+
+<!-- 
+// 防抖debounce
+// 函数调用delay时间后才会执行，如果在delay时间内被调用则不执行，且重新计算执行时间
+function debounce (func, delay) {
+    let timer;
+    return function(...args) {
+        if (timer) {
+            clearTimeout(timer);
+        }
+        timer = setTimeout(() => {
+            func.apply(this, args);
+        }, delay)
+    }
+} 
+-->
+
+
+<!-- 
+// 节流throttle
+// 函数预先设定一个执行周期，当调用函数的时刻大于等于执行周期则执行，然后进入下一个新周期
+function throttle (func, delay) {
+    var begin = new Date();
+    return function(...args) {
+        var current = new Date();
+        if (current - begin >= delay) {
+            func.apply(this, args);
+            begin = current;
+        }
+    }
+} 
+-->

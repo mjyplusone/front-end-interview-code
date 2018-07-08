@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        .title-horse {
+            width: 100px;
+            white-space: nowrap;
+            background: palevioletred;
+            overflow: hidden;
+        }
+        .title {
+            display: inline-block;    
+            animation: horse 12s infinite;
+            animation-delay: 4s;    
+        }
+        @keyframes horse {
+            0% {
+                transform: translateX(0);
+            }
+            70% {
+                transform: translateX(-100%)
+            }
+            100% {
+                transform: translateX(-100%)
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="title-horse">
+        <span class="title">这里是一个跑马灯呀跑马灯啊哈哈哈哈哈哈哈哈</span>
+        <span class="title">这里是一个跑马灯呀跑马灯啊哈哈哈哈哈哈哈哈</span>
+    </div>
+</body>
+</html>

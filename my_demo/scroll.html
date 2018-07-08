@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <title>Pull to Refresh</title>
+    <meta name="viewport" content="width=device-width,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;" />
+    <style>
+        ul {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            margin-top: 0px;
+            padding: 0px;
+        }
+        li {
+            list-style-type: none;
+            height: 35px;
+            background: gainsboro;
+            border-bottom: solid 1px #fff;
+            text-align: left;
+            line-height: 35px;
+            padding-left: 15px;
+        }
+    </style>
+</head>
+<body>
+<div class="outerScroller">
+    <ul class='scroll'>
+        <li>列表1</li>
+        <li>列表2</li>
+        <li>列表3</li>
+        <li>列表4</li>
+        <li>列表5</li>
+        <li>列表6</li>
+        <li>列表7</li>
+        <li>列表8</li>
+        <li>列表9</li>
+        <li>列表10</li>
+    </ul>
+</div>
+<script>
+    // 下拉刷新
+    var scroll = document.querySelector('.scroll');
+    var outerScroller = document.querySelector('.outerScroller');
+    var touchStart = 0;
+    var touchDis = 0;
+
+    outerScroller.addEventListener('touchstart', function(event) {
+        var touch = event.targetTouches[0];
+        touchStart = touch.pageY;
+    }, false);
+
+    outerScroller.addEventListener('touchmove', function(event) {
+        var touch = event.targetTouches[0];
+        // 列表可以向下拉,最大偏移100
+        if (scroll.offsetTop <= 100) {
+            scroll.style.top = scroll.offsetTop + touch.pageY - touchStart + 'px';
+            touchStart = touch.pageY;
+        }
+    }, false);
+
+    outerScroller.addEventListener('touchend', function(event) {
+        // 还原touchStart
+        touchStart = 0;
+        var top = scroll.offsetTop;
+        console.log(top);
+        if (top > 70) refreshTop();
+        // 列表慢慢回去
+        if (top > 0) {
+            var timer = setInterval(function() {
+                scroll.style.top = scroll.offsetTop - 2 + 'px';
+                if(scroll.offsetTop <= 0) clearInterval(timer);
+            }, 1);
+        }
+    }, false);
+
+    function refreshTop() {
+        for(var i = 1; i <= 3; i++)
+        {
+            var node = document.createElement("li");
+            node.innerHTML = "I'm new" + i;
+            scroll.insertBefore(node, scroll.firstChild);
+        }
+    }
+
+    function refreshBottom() {
+        for(var i = 1; i <= 3; i++)
+        {
+            var node = document.createElement("li");
+            node.innerHTML = "I'm new" + i;
+            scroll.insertBefore(node, scroll.lastChild);
+        }
+    }
+
+
+
+    // 上拉加载
+    // 获取滚动条当前的位置 
+    function getScrollTop() { 
+        var scrollTop = 0;
+        if (document.documentElement && document.documentElement.scrollTop) { 
+            scrollTop = document.documentElement.scrollTop; 
+        } else if (document.body) { 
+            scrollTop = document.body.scrollTop; 
+        } 
+        return scrollTop; 
+    } 
+    // 获取当前可视范围的高度 
+    function getClientHeight() { 
+        var clientHeight = 0; 
+        if (document.body.clientHeight && document.documentElement.clientHeight) { 
+            clientHeight = Math.min(document.body.clientHeight, document.documentElement.clientHeight); 
+        } else { 
+            clientHeight = Math.max(document.body.clientHeight, document.documentElement.clientHeight); 
+        } 
+        return clientHeight; 
+    } 
+    // 获取文档完整的高度 
+    function getScrollHeight() { 
+        return Math.max(document.body.scrollHeight, document.documentElement.scrollHeight); 
+    } 
+    window.onscroll = function () { 
+        console.log(getScrollTop());
+        console.log(getClientHeight());
+        console.log(getScrollHeight());
+        if (getScrollTop() + getClientHeight() >= getScrollHeight()) { 
+            refreshBottom();
+        }
+    }
+
+</script>
+</body>
+</html>
