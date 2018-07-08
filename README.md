@@ -87,6 +87,16 @@
 - [链表中环的入口节点](https://github.com/mjyplusone/front-end-interview-code/blob/master/jzoffer55.js)
 - [删除链表中的重复节点](https://github.com/mjyplusone/front-end-interview-code/blob/master/jzoffer56.js)
 - [二叉树的下一个节点](https://github.com/mjyplusone/front-end-interview-code/blob/master/jzoffer57.js)
+- [对称的二叉树](https://github.com/mjyplusone/front-end-interview-code/blob/master/jzoffer58.js)
+- [按之字形顺序打印二叉树](https://github.com/mjyplusone/front-end-interview-code/blob/master/jzoffer59.js)
+- [把二叉树打印成多行](https://github.com/mjyplusone/front-end-interview-code/blob/master/jzoffer60.js)
+- [序列化二叉树](https://github.com/mjyplusone/front-end-interview-code/blob/master/jzoffer61.js)
+- [二叉搜索树的第k个节点](https://github.com/mjyplusone/front-end-interview-code/blob/master/jzoffer62.js)
+- [数据流中的中位数](https://github.com/mjyplusone/front-end-interview-code/blob/master/jzoffer63.js)（大小根堆）
+- [滑动窗口的最大值](https://github.com/mjyplusone/front-end-interview-code/blob/master/jzoffer64.js)
+- [矩阵中的路径](https://github.com/mjyplusone/front-end-interview-code/blob/master/jzoffer65.js)
+- [机器人的运动范围](https://github.com/mjyplusone/front-end-interview-code/blob/master/jzoffer66.js)
+
 
 #### 百度2015前端研发
 - [css伪元素：三角](https://github.com/mjyplusone/front-end-interview-code/blob/master/triangle.html)
